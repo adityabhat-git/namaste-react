@@ -1,1 +1,1 @@
-This is my react practice repo . learning from the guru Akshay Sain
+This is my react practice repo Episode 1. learning from the guru Akshay Saini
