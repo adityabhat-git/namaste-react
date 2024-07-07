@@ -1,50 +1,21 @@
-/**
- * React uses philosophy of manipulating DOM using JS
- * The most costliest operation on a DOM is to append some nodes in the DOM and then removing it based on the requirement
- * So react was built to handle/manipulate DOM using JS in an efficient manner
- * React.createElement() creates a react object of type h1 in this case, which has some props
- * and wehnever it is rendered , it is converted into html and puts it up into the DOM
- * React.createElement() third parameter can be a single child or multiple children. If you pass an array of elements to children it can
- * create siblings
- * React.render() will replace everything inside root which is already exisiting there
- * Order of files matters
- * React is only rendered in the root defined.
- * */
-
-// const heading = React.createElement("h1", {
-//     id:"heading"
-// }, "Hello World from React! ");
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-
-/**
- * Create nested elements in side react
- * <div id="parent">
- *  <div id = "child">
- *      <h1> I am an H1 </h1>
- *      <h2> I am an H2 </h2>
- *   </div>
- * <div id = "child2">
- *      <h1> I am an H1 </h1>
- *      <h2> I am an H2 </h2>
- *   </div>
- *  </div>
- *
- */
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", { id: "child_heading1" }, "This is Namaste React 🚀"),
-    React.createElement("h2", { id: "child_heading2" }, "By Aditya Bhat"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", { id: "child2_heading1" }, "I am an H1"),
-    React.createElement("h2", { id: "child2_heading2" }, "I am an H2"),
-  ]),
-]);
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Namaste React 🚀"
+);
+console.log(heading);
+// to make these kind of elements in react , it becomes a little clumsy and lengthy process.So facebook developers created some
+//thing known as JSX. Its a syntax for writing react code / creating react elements. JSX is different than React.
 
+//JSX is not HTML inside JS. it is having HTML LIKE SYNTAX.
+// JSX is converted to React.CreateElement using Babel.
+// JSX written in single line is a valid JSX
+// In case you want to write in multiple lines then JSX needs to be wrapped inside paranthesis () to be valid. Since babel has to 
+// understand the JSX for compilation, it has be inside paranthesis in case of multiple lines JSX.
+const jsxHeading = <h1 id="heading">Namaste React from JSX 🚀</h1>;
+console.log(jsxHeading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(jsxHeading);
