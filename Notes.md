@@ -41,3 +41,35 @@ const Heading = () => (
 )
 
 ```
+- To Compose two components inside one another, it is known as __Component Composition__.
+
+## Amazing Super Power of JSX
+- You can inject anything inside JSX using *curly braces {}*.
+- This can be used in a use case where you want to inject a React Element inside a React Component.
+- Example can be shown as below.
+
+```
+const title = <h1>This is Title React Element </h1>;
+const Heading = () => (
+    <div id = "container">
+        {title}
+        <h1> This is Heading Component </h1>
+    </div>
+);
+```
+
+- If anything is being sent inside these curly braces, JSX sanitizes that data.
+- In JSX inside curly braces, you can pass anything made of JS
+- so calling a component can be shown in 3 ways as shown below
+
+```
+const Title = () => <h1>This is a Title Component</h1>;
+const Heading = () => (
+    <div id="container">
+        {Title()}
+        <Title />
+        <Title></Title>
+        <h1> This is Heading Component </h1>
+    </div>
+)
+```
