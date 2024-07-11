@@ -73,3 +73,7 @@ const Heading = () => (
     </div>
 )
 ```
+
+- Props -> pass data dynamically to a component
+- So like Functional Components are basically JavaScript functions, similarly props are basically arguments passed to a function
+- So we can say that passing the props to React Component , is same as passing arguments to a function

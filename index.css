@@ -1,3 +1,114 @@
-#heading {
-    color: red;
+#root {
+  width: auto;
+  height: auto;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items {
+  padding: 0px 5px;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style: none;
+  font-size: 24px;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.search {
+  padding: 15px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 2px;
+  width: 200px;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.card-image {
+  height: 120px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-info {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.card-rating-outer{
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  font-size: 11px;
+  margin-right: 8px;
+}
+
+.card-rating-inner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  color: gold;
+}
+
+.card-rating-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #ccc;
+}
+.card-rating-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+}
+
+.rating-value {
+  font-size: 12px;
+  color: #333;
+}
+
+.card-eta {
+  font-size: 12px;
+  color: #333;
 }
