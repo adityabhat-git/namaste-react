@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import behrouzBiryani from "./src/images/behrouz-biryani.png";
-import kfc from "./src/images/kfc.png"
+import restList from "./data.js";
 
 const Header = () => {
   const imageSource = require("./src/images/logo.png");
@@ -23,24 +22,29 @@ const Header = () => {
 };
 
 const RestaurantCard = (props) => {
-  const ratingValue = props.rating;
-  const starPercentage = (ratingValue/5)*100;
-  const starPercentageRounded = `${Math.round(starPercentage/10)*10}%`;
+  const {resData} = props;
+  const {cloudinaryImageId,name,cuisines, avgRating, sla }  = resData;
+  const ratingValue = avgRating;
+  const starPercentage = (ratingValue / 5) * 100;
+  const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
 
   return (
     <div className="card">
       <div
         className="card-image"
-        style={{ backgroundImage: `url(${props.imageName})` }}
+        style={{ backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId})` }}
       ></div>
       <div className="card-content">
-        <h3 className="card-title">{props.title}</h3>
-        <p className="card-info">{props.cuisines}</p>
+        <h3 className="card-title">{name}</h3>
+        <p className="card-info">{cuisines.join(", ")}</p>
         <div className="card-rating-outer">
-          <div className="card-rating-inner" style={{width:starPercentageRounded}}></div>
+          <div
+            className="card-rating-inner"
+            style={{ width: starPercentageRounded }}
+          ></div>
         </div>
-        <span className="rating-value">{props.rating}</span>
-        <p className="card-info card-eta">{`ETA: ${props.eta} min`}</p>
+        <span className="rating-value">{avgRating}</span>
+        <p className="card-info card-eta">{`ETA: ${sla.deliveryTime} mins`}</p>
       </div>
     </div>
   );
@@ -51,20 +55,9 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="card-container">
-        <RestaurantCard
-          title="Behrouz Biryani"
-          cuisines="Biryani, North Indian, Asian"
-          rating="4.5"
-          eta="20"
-          imageName={behrouzBiryani}
-        />
-        <RestaurantCard
-          title="KFC"
-          cuisines="Burgers, Fries, Chicken"
-          rating="5"
-          eta="10"
-          imageName={kfc}
-        />
+        {restList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant.info} />
+        ))}
       </div>
     </div>
   );

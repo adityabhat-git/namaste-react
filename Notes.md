@@ -77,3 +77,13 @@ const Heading = () => (
 - Props -> pass data dynamically to a component
 - So like Functional Components are basically JavaScript functions, similarly props are basically arguments passed to a function
 - So we can say that passing the props to React Component , is same as passing arguments to a function
+- Config driven UI
+    - UI is driven by config, where everything comes in Config and we just read the config and populate the UI based upon that.
+
+- we should use map function in order to loop through one type of components
+- we should keep in mind that while looping we need to have a key to each element inside the loop.
+- React optimizes its render cycles, which helps in not rendering the data again.
+- let's say we are rendering multiple restaurant cards in a food ordering app. we are display 200 cards as of now , so it will render the dom based upon the loop.
+- now let's say we have not provided the cards a unique id, and a new restaurant has to be rendered in the first place, So react will render all the restaurants 
+- IN CASE WE PROVIDED a UNIQUE ID to each restaurant card, then react will know which restaurant has to be added and will render only that restaurant card and not all which would optimize the performance. This concept helps in infinite scroll.
+- NEVER USE INDEX AS KEYS , NOT RECOMMENDED BY REACT AS WELL
