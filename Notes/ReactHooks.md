@@ -20,5 +20,7 @@
 - A HOOK is just like a normal JS function which is given to us by React as a utility function.
 
 - Two Important Hooks
-    - useState()  -> to generate superpowerful react variables.
+    - useState()  -> to generate superpowerful state variables in React.
+        - ``` const[list, setList] = useState([{data:"abc"}]); ```
+        - Whenever a state variable changes, react will re-render the component.
     - useEffect() -> 

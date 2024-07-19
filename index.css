@@ -32,6 +32,49 @@
 
 .search {
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-box{
+  width: 80%;
+  height: 30px;
+  border:1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn{
+  width: 20%;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+.filter {
+  padding: 15px;
+}
+
+.filter-btn{
+  width: 200px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover,
+.filter-btn:hover{
+  cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .card-container {
